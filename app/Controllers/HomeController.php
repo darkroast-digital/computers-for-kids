@@ -29,9 +29,9 @@ class HomeController extends Controller
         $subject = 'New ' . $type . ' from CFK Website';
 
         $mail->setFrom($email, $name);
-        $mail->addAddress('contact@computersforkids.ca', 'Computers For Kids');
-        $mail->addReplyTo('contact@computersforkids.ca', 'Computers For Kids');
-        $mail->ReturnPath='contact@computersforkids.ca';
+        $mail->addAddress('info@cfkcanada.org', 'Computers For Kids');
+        $mail->addReplyTo('info@cfkcanada.org', 'Computers For Kids');
+        $mail->ReturnPath='info@cfkcanada.org';
 
         $mail->isHTML(true);
 
