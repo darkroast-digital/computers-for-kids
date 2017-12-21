@@ -1,0 +1,74 @@
+/*
+|--------------------------------------------------------------------------
+| #BADGE
+|--------------------------------------------------------------------------
+*/
+
+
+
+.badge {
+    display: inline-block;
+    padding: .25rem 1rem;
+    background: color(white);
+
+    @if ($is-background-white) {
+        background: lighten(color(grey-lightest), 1%);
+    }
+
+    border-left: solid 3px color(black);
+    color: color(black);
+
+    @if ($has-radius) {
+        overflow: hidden;
+        border-radius: radius(small);
+    }
+
+    @if ($has-shadow) {
+        @include shadow(raised);
+    }
+
+    &--primary {
+        color: color(primary);
+        border-left-color: color(primary);
+
+        &:before {
+            background-color: color(primary);
+        }
+    }
+
+    &--secondary {
+        color: color(secondary);
+        border-left-color: color(secondary);
+
+        &:before {
+            background-color: color(secondary);
+        }
+    }
+
+    &--success {
+        color: color(success);
+        border-left-color: color(success);
+
+        &:before {
+            background-color: color(success);
+        }
+    }
+
+    &--warning {
+        color: color(warning);
+        border-left-color: color(warning);
+
+        &:before {
+            background-color: color(warning);
+        }
+    }
+
+    &--error {
+        color: color(error);
+        border-left-color: color(error);
+
+        &:before {
+            background-color: color(error);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+///* ========================================================================
+//   #Background Cover
+//   ======================================================================== */
+
+  // Set background-image to cover element, with position hooks
+
+@mixin cover($x: center, $y: center) {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: $x $y;
+}

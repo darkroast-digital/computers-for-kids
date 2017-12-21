@@ -1,0 +1,144 @@
+/*
+|--------------------------------------------------------------------------
+| #CONFIG
+|--------------------------------------------------------------------------
+*/
+
+
+
+// #NAMESPACE
+// =========================================================================
+
+    $is-namespaced: false !default;
+
+
+
+// #THEME
+// =========================================================================
+
+    $is-dark: false !default;
+
+
+
+// #BACKGROUND COLOR
+// =========================================================================
+
+    $is-background-white: true !default;
+
+
+
+// #CONFIG COLORS
+// =========================================================================
+
+    // Theme
+    $primary: #29ba47;
+    $secondary: #055f90;
+
+
+    // Utility
+    $error: #F04F54;
+    $success: #43CB9D;
+    $warning: #FDB557;
+
+    // Greys
+    $grey: #888;
+
+    $grey-light: #DEE2E6;
+    $grey-lighter: #E9ECEF;
+    $grey-lightest: #F8F8F8;
+
+    $grey-dark: #333;
+    $grey-darker: #373A46;
+    $grey-darkest: #212529;
+
+    $white: #ffffff;
+    $black: #18161C;
+
+
+
+// #CONFIG TYPOGRAPHY
+// =========================================================================
+
+    // Fonts
+    @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900");
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+    $font-one: 'Source Sans Pro';
+    $font-mono: 'Roboto Mono';
+
+    // Font Size
+    $font-size: 1rem;
+
+    // Colors
+    $font-color: #888888;
+    $heading-color: $black;
+
+    //Heading Weight
+    $heading-weight: normal !default;
+
+    // Options
+
+    $ms-ratio  : 1.125 !default;
+    $ms-base   : $font-size !default;
+    $ms-scale  : 3 !default;
+
+
+
+// #CONFIG SHADOW
+// =========================================================================
+
+    $has-shadow: false !default;
+
+
+
+// #CONFIG RADIUS
+// =========================================================================
+
+
+    $has-radius: false !default;
+
+
+
+// #CONFIG NAV
+// =========================================================================
+
+    $nav-is-right: false !default;
+    $nav-is-fixed: false !default;
+
+
+
+// #SIDEBAR
+// =========================================================================
+
+    $sidebar-width: 250px;
+
+
+// #CONFIG BREAKPOINTS
+// =========================================================================
+
+    $small: 30em; // 480px
+    $medium: 48em; // 768px
+    $large: 90em; // 1440px
+    $extra-large: 1441px; // 1441px
+
+
+
+// #CONFIG GRID
+// =========================================================================
+
+    $columns: 12;
+    $gutter: 1rem;
+
+
+
+// #CONFIG Z-INDEX
+// =========================================================================
+
+    $lower: 0;
+    $low: 20;
+    $middle: 40;
+    $high: 60;
+    $higher: 80;
+    $highest: 100;
+
+

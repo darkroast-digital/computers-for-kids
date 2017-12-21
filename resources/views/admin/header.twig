@@ -1,0 +1,72 @@
+<header class="admin-header">
+    <div class="admin-header__container container--full">
+
+        <nav class="admin-nav">
+            <div class="admin-nav__container container--full">
+                <div class="logo-wrapper">
+                    <a href="{{ path_for('home') }}" class="logo">
+                        <img src="/assets/img/logo-white.png" alt="Computers for Kids Home">
+                    </a>
+                </div>
+
+                <div class="admin-menu">
+                    <ul class="nav__navbar is--active">
+                        <li class="{% if current_path == path_for('dash') %}is--active{% endif %}"><a href="{{ path_for('dash') }}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 384 384" style="enable-background:new 0 0 384 384;" height="20px" width="20px" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <g>
+                                        <rect x="213.3" width="170.7" height="128"/>
+                                        <rect width="170.7" height="213.3"/>
+                                        <rect y="256" width="170.7" height="128"/>
+                                        <rect x="213.3" y="170.7" width="170.7" height="213.3"/>
+                                    </g>
+                                </g>
+                            </g>
+                            </svg>
+                            Dashboard
+                        </a></li>
+                        <li class="posts-dropdown {% if (current_path == path_for('posts.index')) or (current_path == path_for('posts.create')) or (current_path == path_for('posts.view', { 'slug': post.slug} )) or (current_path == path_for('posts.edit', { 'slug': post.slug} )) %}is--active{% endif %}"><a href="{{ path_for('posts.index') }}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 357 459" style="enable-background:new 0 0 357 459;" height="20px" width="20px" xml:space="preserve">
+                            <g>
+                                <g id="bookmark_1_">
+                                    <path d="M306,0H51C22.9,0,0,23,0,51v408l178.5-76.5L357,459V51C357,23,334,0,306,0z"/>
+                                </g>
+                            </g>
+                            </svg>
+                            Posts
+                        </a></li>
+                        <li class="users-dropdown {% if (current_path == path_for('users.index')) or (current_path == path_for('users.create')) or (current_path == path_for('users.view', { 'id': user.id } )) or (current_path == path_for('users.edit', { 'id': user.id } )) %}is--active{% endif %}"><a href="{{ path_for('users.index') }}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 36.1 43" style="enable-background:new 0 0 36.1 43;" height="20px" width="20px" xml:space="preserve">
+                            <g>
+                                <path d="M36.1,34l-0.1,0.2C31.2,39.9,24.8,43,18,43c-6.8,0-13.1-3.2-17.9-8.9L0,34l0-0.2c0.9-6,4.1-10.8,8.8-13.6l0.3-0.2l0.3,0.3
+                                    c2.3,2.4,5.3,3.7,8.6,3.7s6.3-1.3,8.6-3.7l0.3-0.3l0.3,0.2c4.8,2.8,7.9,7.6,8.8,13.6L36.1,34z M18,21.5c5.9,0,10.7-4.8,10.7-10.7
+                                    S24,0,18,0S7.3,4.8,7.3,10.7S12.1,21.5,18,21.5z"/>
+                            </g>
+                            </svg>
+                            Users
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="user">
+            <div class="user__container container--full">
+                <ul>
+                    <li class="dropdown"><a href="{{ path_for('users.view', { 'id': auth.user.id }) }}">Hey, {{ auth.user.name }}!</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path_for('users.edit', { 'id': auth.user.id }) }}">Edit Profile</a></li>
+                            <li><a href="{{ path_for('logout') }}">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="img-container">
+                    <img src="/assets/uploads/avatars/{{ auth.user.id }}/avatar.jpg">
+                </div>
+            </div>
+        </div>
+        
+        {% include 'partials/admin-hamburger.twig' %}
+    </div>
+</header>

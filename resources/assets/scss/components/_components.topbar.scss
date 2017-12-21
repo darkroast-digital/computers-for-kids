@@ -1,0 +1,110 @@
+/*
+|--------------------------------------------------------------------------
+| #SIDEBAR
+|--------------------------------------------------------------------------
+*/
+
+
+
+.topbar {
+    display: flex;
+    position: fixed;
+    z-index: z(highest);
+    width: 100%;
+    height: $sidebar-width;
+    background: color(white);
+    align-items: center;
+    @include shadow(light);
+
+    &__container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+
+    &__profile {
+        cursor: pointer;
+        height: $sidebar-width;
+        
+        img {
+            margin-left: .5rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        padding-right: 5rem;
+    }
+
+    .dropdown {
+        display: block;
+        padding: 0;
+        box-shadow: 0 7px 6px -3px rgba(color(primary),.4),0 1px 3px 0 rgba(color(primary),.08);
+
+        li {
+            width: 100%;
+            padding: .5rem .5rem;
+            display: block;
+            text-align: left;
+            position: relative;
+
+            &:first-of-type {
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80%;
+                    height: 1px;
+                    background: color(grey-lighter);
+                }
+            }
+
+            &:last-of-type {
+                background: color(primary);
+                text-align: center;
+                transition: background .2s ease(inOutSine);
+
+                a {
+                    color: color(white);
+                }
+
+                &:hover {
+                    background: lighten(color(primary), 10%);
+                }
+            }
+        }
+    }
+
+    a {
+        padding: 0 1rem;
+    }
+
+    &__back {
+        display: flex;
+        align-items: center;
+        color: color(font);
+
+        strong {
+            margin-right: .25rem;
+        }
+        
+        i {
+            margin-right: .25rem;
+        }
+    }
+}

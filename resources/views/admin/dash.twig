@@ -1,0 +1,80 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}Dashboard{% endblock %}
+{% block pageclass %}dash{% endblock %}
+
+{% block content %}
+{% include 'admin/header.twig' %}
+
+<section class="dash-content admin">
+    <div class="dash-content__container container">
+        <div class="column-9 posts">
+            <div class="title">
+                <h2>Recent Posts</h2>
+                <a href="{{ path_for('posts.create') }}" class="button">+ New Post</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Title</td>
+                        <td>Visible</td>
+                        <td>Updated</td>
+                        <td>Author</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts|slice(0, 5) %}
+                        <tr>
+                            <td data-th="Featured Image">
+                                <div class="img-container">
+                                    <img src="/assets/uploads/posts/{{ post.id }}/featured.jpg" draggable="false">
+                                </div>
+                            </td>
+                            <td data-th="Title">
+                                <a href="{{ path_for('posts.view', { 'slug': post.slug} ) }}">{{ post.title }}</a>
+                                <p class="slug">Slug: {{ post.slug }}</p>
+                            </td>
+                            <td data-th="Visible">{% if post.active == 1 %}Yes{% else %}No{% endif %}</td>
+                            <td data-th="Updated">{{ post.updated_at|date("d/m/Y") }}</td>
+                            <td data-th="Author">{{ post.author }}</td>
+                            <td>{% if auth.user.role == 'admin' %}<a href="{{ path_for('posts.delete', { 'slug': post.slug }) }}"><i class="fa fa-trash" aria-hidden="true"></i></a> {% endif %}{% if (auth.user.role == 'admin') or (auth.user.id == post.user_id) %}<a href="{{ path_for('posts.edit', { 'slug': post.slug }) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>{% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{{ path_for('posts.index') }}" class="posts-link">View All Posts</a>
+        </div>
+
+        <div class="column-3 users">
+            <div class="title">
+                <h2>Users</h2>
+                {% if auth.user.role == 'admin' %}
+                    <a href="{{ path_for('users.create') }}" class="button">+ New User</a>
+                {% endif %}
+            </div>
+
+            <div class="users-list">
+                {% for user in users|slice(0, 3) %}
+                    <div class="user">
+                        <a href="{{ path_for('users.view', { 'id': user.id }) }}">
+                            <div class="image-container">
+                                <img src="/assets/uploads/avatars/{{ user.id }}/avatar.jpg">
+                            </div>
+                            <div class="info">
+                                <p><strong>Name:</strong> {{ user.name }}</p>
+                                <p><strong>Role:</strong> {{ user.role }}</p>
+                                <p><strong>Email:</strong> {{ user.email }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="{{ path_for('users.index') }}" class="users-link">View All Users</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+/*
+|--------------------------------------------------------------------------
+| #HAMBURGER
+|--------------------------------------------------------------------------
+*/
+
+
+
+.hamburger {
+    z-index: z(highest);
+    cursor: pointer;
+    display: none;
+
+    @include breakpoint (md) {
+        display: block;
+    }
+
+    span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin-bottom: 4px;
+        background: color(secondary);
+        transition: all .3s ease(inOutQuint);
+    }
+
+    &.is--open {
+
+        span {
+            
+            &:first-of-type {
+                transform: rotate(45deg) translateY(13px);
+                background: color(error);
+            }
+
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+
+            &:last-of-type {
+                transform: rotate(-45deg) translateY(-13px);
+                background: color(error);
+            }
+        }
+    }
+
+    &-admin {
+        margin:2rem;
+        margin-top:2.6rem;
+
+        @media screen and (max-width:32em) {
+            margin:1rem;
+            margin-top:2.6rem;
+        }
+
+        span {
+            background-color:white;
+        }
+    }
+}

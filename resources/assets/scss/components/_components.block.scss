@@ -1,0 +1,23 @@
+/*
+|--------------------------------------------------------------------------
+| #BLOCK
+|--------------------------------------------------------------------------
+*/
+
+
+
+%block,
+.block {
+    background: color(secondary);
+    padding: 1rem;
+    margin: 1rem 0;
+    max-width:60vw;
+
+    @if ($has-radius) {
+        border-radius: radius(small);
+    }
+
+    @if (has-shadow) {
+        @include shadow(raised);
+    }
+}

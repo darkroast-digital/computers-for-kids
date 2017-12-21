@@ -1,0 +1,39 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block pagedesc %}{{ post.page_desc }}{% endblock %}
+{% block pagekeys %}{{ post.page_keys }}{% endblock %}
+{% block pageogtitle %}{{ post.title }}{% endblock %}
+{% block pageogdesc %}{{ post.page_desc }}{% endblock %}
+{% block pageogimage %}/assets/uploads/posts/{{ post.id }}/featured.jpg{% endblock %}
+{% block pageclass %}post{% endblock %}
+
+{% block content %}
+
+{% include 'admin/header.twig' %}
+
+<section class="post-content admin">
+    <div class="post-content__container container">
+        <div class="info">
+            <div class="top">
+                <div class="title">
+                    <h1>{{ post.title }}</h1>
+                    <div class="admin-options">
+                        {% if auth.user.role == 'admin' %}<a href="{{ path_for('posts.delete', { 'slug': post.slug }) }}"><i class="fa fa-trash" aria-hidden="true"></i></a> {% endif %}{% if (auth.user.role == 'admin') or (auth.user.id == post.user_id) %}<a href="{{ path_for('posts.edit', { 'slug': post.slug }) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>{% endif %}
+                    </div>
+                </div>
+                <a href="{{ path_for('posts.create') }}" class="button">+ New Post</a>
+            </div>
+            <h2>Written By: {{ post.author }}</h2>
+            <p>Slug: {{ post.slug }}</p>
+            <p>Created: {{ post.created_at|date("d/m/Y") }} | Updated: {{ post.updated_at|date("d/m/Y") }}</p>
+            <p>Status: {% if post.active == 1 %}Visible{% else %}Hidden{% endif %}</p>
+        </div>
+        <div class="body">
+            <img src="/assets/uploads/posts/{{ post.id }}/featured.jpg" draggable="false">
+
+            {{ post.body|raw }}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

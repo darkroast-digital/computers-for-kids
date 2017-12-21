@@ -1,0 +1,33 @@
+/*
+|--------------------------------------------------------------------------
+| #COLORS
+|--------------------------------------------------------------------------
+*/
+
+$colors: (
+    primary: $primary,
+    secondary: $secondary,
+    error: $error,
+    success: $success,
+    warning: $warning,
+    grey: $grey,
+    grey-light: $grey-light,
+    grey-lighter: $grey-lighter,
+    grey-lightest: $grey-lightest,
+    grey-dark: $grey-dark,
+    grey-darker: $grey-darker,
+    grey-darkest: $grey-darkest,
+    white: $white,
+    black: $black,
+    font: $font-color,
+    heading: $heading-color
+);
+
+@function color($key) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $colors.";
+    @return null;
+}

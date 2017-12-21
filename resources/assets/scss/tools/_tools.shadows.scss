@@ -1,0 +1,26 @@
+///* ========================================================================
+//   #SHADOWS
+//   ======================================================================== */
+
+
+
+@mixin shadow($weight) {
+  @if $weight == light {
+  	box-shadow: 0 4px 6px 0 rgba(50,50,93,.1),0 1px 3px 0 rgba(0,0,0,.08);
+  }
+	@else if $weight == raised {
+  	box-shadow: 0 2px 0 0 rgba(0, 0, 0, .1);
+  }
+  @else if $weight == normal {
+  	box-shadow: 0 7px 14px 0 rgba(50, 50, 93, .1),0 3px 6px 0 rgba(0,0,0,.08);
+  }
+	@else if $weight == heavy {
+  	box-shadow: 0 7px 14px 0 rgba(50, 50, 93, .2),0 3px 6px 0 rgba(0,0,0,.14);
+  }
+	@else if $weight == heavier {
+  	box-shadow: 0 10px 18px 0 rgba(50, 50, 93, .2),0 6px 9px 0 rgba(0,0,0,.14);
+  }
+	@else if $weight == heaviest {
+  	box-shadow: 0 15px 35px 0 rgba(50,50,93,.1),0 5px 15px 0 rgba(0,0,0,.07);
+  }
+}

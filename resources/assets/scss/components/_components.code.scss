@@ -1,0 +1,64 @@
+/*
+|--------------------------------------------------------------------------
+| #CODE BLOCK
+|--------------------------------------------------------------------------
+*/
+
+
+
+$code-punctuation: lighten(color(primary), 20%);
+$code-tag: lighten(color(primary), 20%);
+$code-class: color(secondary);
+$code-attr: color(primary);
+
+
+.hljs {
+    display: block;
+    //background: $docs-grey;
+    padding: 2rem;
+    color: $code-punctuation;
+    //border: solid 1px darken($docs-grey, 5%);
+    border-radius: radius(medium);
+    margin: 2rem 0;
+
+    * {
+        font-family: $font-mono;
+    }
+}
+
+
+.hljs-string {
+    color: $code-class;
+}
+
+.hljs-section {
+    color: $code-tag;
+}
+
+.hljs-name {
+    color: $code-tag;
+}
+
+.hljs-tag {
+    color: $code-punctuation;
+}
+
+.hljs-attr {
+    color: $code-attr;
+}
+
+.hljs-selector-id {
+    color: $code-attr;
+}
+
+.hljs-selector-class {
+    color: $code-attr;
+}
+
+.hljs-selector-attr {
+    color: $code-attr;
+}
+
+.hljs-selector-pseudo {
+    color: $code-attr;
+}

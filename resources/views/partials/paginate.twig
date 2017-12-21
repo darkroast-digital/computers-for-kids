@@ -1,0 +1,48 @@
+<div class="pagination">
+    
+    {% if context == 'posts' %}
+        {% if posts.hasPages %}
+            {% if posts.onFirstPage %}
+                
+            {% else %}
+                <a href="{{ posts.previousPageUrl }}">Prev Page</a>/
+            {% endif %}
+            {% if posts.hasMorePages %}
+                    <a href="{{ posts.nextPageUrl }}">Next Page</a>
+            {% else %}
+
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if context == 'users' %}
+        {% if users.hasPages %}
+            {% if users.onFirstPage %}
+                
+            {% else %}
+                <a href="{{ users.previousPageUrl }}">Prev Page</a>/
+            {% endif %}
+            {% if users.hasMorePages %}
+                    <a href="{{ users.nextPageUrl }}">Next Page</a>
+            {% else %}
+
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if context == 'comments' %}
+        {% if comments.hasPages %}
+            {% if comments.onFirstPage %}
+                
+            {% else %}
+                <a href="{{ comments.previousPageUrl }}">Prev Page</a>/
+            {% endif %}
+            {% if comments.hasMorePages %}
+                    <a href="{{ comments.nextPageUrl }}">Next Page</a>
+            {% else %}
+
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+</div>

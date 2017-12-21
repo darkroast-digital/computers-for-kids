@@ -1,0 +1,44 @@
+/*
+|--------------------------------------------------------------------------
+| #SIDEBAR
+|--------------------------------------------------------------------------
+*/
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z(highest);
+    height: 100%;
+    max-width: $sidebar-width;
+    background: color(white);
+    border-right: solid 1px color(grey-light);
+
+    hr {
+        margin: 0;
+    }
+
+    &__brand {
+        display: block;
+        width: 100%;
+        padding: .5rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+        padding: 0;
+        padding: 1rem 0;
+    }
+
+    li {
+        width: 100%;
+    }
+}

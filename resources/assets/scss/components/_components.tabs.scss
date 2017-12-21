@@ -1,0 +1,160 @@
+/*
+|--------------------------------------------------------------------------
+| #TABS
+|--------------------------------------------------------------------------
+|
+| Add .tabs--left for inline tabs with nav to left
+| Add .tabs--right for inline tabs with nav to right
+|
+*/
+
+
+
+.tabs {
+    //height:70vh;
+    max-width:60vw;
+    //overflow-y:scroll;
+
+    &__nav {
+        display: flex;
+        justify-content:space-between;
+        list-style-type: none;
+        width: 100%;
+        position: relative;
+        background-color: white;
+        color: $grey;
+
+        @include breakpoint(md) {
+            display: inline-block;
+            padding-left:0;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background: color(grey-light);
+            transition: all .15s ease(inOutQuad);
+        }
+
+        li {
+            min-width: 100px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight:900;
+            border-right:1px solid $grey-light;
+            padding:1rem;
+            width:100%;
+
+            @include breakpoint(md) {
+                border-bottom:1px solid $grey-light;
+            }
+
+            &:last-child {
+                border-right:none;
+            }
+            
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: z(low);
+                width: 100%;
+                transition: all .15s ease(inOutQuad);
+            }
+
+            &.is--active, &:hover {
+                color:$primary;
+                transition:0.5s;
+            }
+        }
+    }
+
+    &__body {
+        position: relative;
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        height:60vh;
+        overflow-y:scroll;
+        width:100%;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0 ease(inOutQuad) 0;
+        background-color: white;
+        padding-bottom:2rem;
+        padding-top:2rem;
+
+        .container {
+            margin-top:0;
+            max-width:85%;
+            flex-direction:column;
+        }
+
+        h6 {
+            color:$grey-dark;
+            font-size:1.5em;
+            font-weight:800;
+        }
+
+        p {
+            color:$grey;
+        }
+
+        ul {
+            margin-bottom:1rem;
+        }
+
+        img {
+            max-width: 375px;
+            height: auto;
+            padding: 10px;
+            vertical-align:top;
+            display: inline-block;
+            float:left;
+        }
+
+        form {
+
+            input, textarea {
+                margin-bottom:.25rem;
+                
+                &:hover {
+                    border-color:$grey-light;
+                }
+
+                &:focus {
+                    border-color:$grey-dark;
+                }
+            }
+
+            button {
+                text-transform:uppercase;
+                font-weight:600;
+                padding:.5rem 2rem;
+
+                &:hover {
+                    background-color:$secondary;
+                    border-color:$secondary;
+                }
+            }
+        }
+
+        &.is--active {
+            position: relative;
+            opacity: 1;
+            pointer-events: all;
+            visibility: visible;
+        }
+    }
+}

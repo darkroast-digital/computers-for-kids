@@ -1,0 +1,13 @@
+{% if ticket.status == 'Open' %}
+    <span class="badge badge--small badge--success">{{ ticket.status }}</span>
+
+    {% elseif ticket.status == 'In Progress' %}
+        <span class="badge badge--small badge--warning">{{ ticket.status }}</span>
+
+    {% elseif ticket.status == 'Done' %}
+        <span class="badge badge--small badge--error">{{ ticket.status }}</span>
+        
+    {% elseif ticket.status == 'On Hold' %}
+        <span class="badge badge--small badge--disabled">{{ ticket.status }}</span>
+
+{% endif %}

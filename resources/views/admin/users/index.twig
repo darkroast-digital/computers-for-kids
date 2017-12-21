@@ -1,0 +1,60 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}All Users{% endblock %}
+{% block pageclass %}users{% endblock %}
+
+{% block content %}
+
+{% include 'admin/header.twig' %}
+
+<section class="users-content admin">
+    <div class="users-content__container container">
+        <div class="title">
+            <h2>All Users</h2>
+            <div class="actions">
+                <div class="search-bar">
+                    <form action="{{ path_for('search', { 'category': 'user' } ) }}" method="get">
+                        <div class="field is-search">
+                            <input type="text" class="search" name="q" placeholder="Search...">
+                        </div>
+                    </form>
+                </div>
+                {% if auth.user.role == 'admin' %}
+                    <a href="{{ path_for('users.create') }}" class="button">+ New User</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Created</td>
+                    <td>Role</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td data-th="Avatar">
+                            <div class="img-container">
+                                <img src="/assets/uploads/avatars/{{ user.id }}/avatar.jpg">
+                            </div>
+                        </td>
+                        <td data-th="Name"><a href="{{ path_for('users.view', { 'id': user.id } ) }}">{{ user.name }}</a></td>
+                        <td data-th="Email">{{ user.email }}</td>
+                        <td data-th="Created">{{ user.created_at|date("d/m/Y") }}</td>
+                        <td data-th="Role">{{ user.role }}</td>
+                        <td>{% if auth.user.role == 'admin' %}<a href="{{ path_for('users.delete', { 'id': user.id }) }}"><i class="fa fa-trash" aria-hidden="true"></i></a> {% endif %}{% if (auth.user.role == 'admin') or (auth.user.id == user.id) %}<a href="{{ path_for('users.edit', { 'id': user.id }) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% include 'partials/paginate.twig' with { 'context': 'posts' } %}
+    </div>
+</section>
+
+{% endblock %}

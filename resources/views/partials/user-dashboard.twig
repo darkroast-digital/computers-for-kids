@@ -1,0 +1,47 @@
+<div class="block">
+    <table>
+        <thead>
+            <tr>
+                <td>Ticket ID</td>
+                <td>Status</td>
+                <td>Subject</td>
+                <td>Created</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in tickets %}
+                    <tr>
+                        <td data-th="Ticket ID">{{ ticket.id }}</td>
+                        <td data-th="Status">{% include 'partials/status.twig' %}</td>
+                        <td data-th="Subject"><a href="{{ path_for('dashboard.ticket', { 'hash': ticket.hash }) }}">{{ ticket.subject }}</a></td>
+                        <td data-th="Created">{{ date(ticket.created_at) }}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% include 'partials/paginate.twig' %}
+
+<div class="title">
+    Add Ticket
+</div>
+
+<div class="block">
+    <form action="{{ path_for('ticket.submit') }}" method="post" enctype="multipart/form-data">
+        <div class="field">
+            <label for="subjet">Subject</label>
+            <input type="text" name="subject">
+        </div>
+        <div class="field">
+            <label for="issue">Issue</label>
+            <textarea name="issue"></textarea>
+        </div>
+        <div class="field upload">
+            <label for="files">Drop Your Files Here</label>
+            <input type="file" id="files" name="files[]" multiple="">
+            <div class="preview"></div>
+        </div>
+        <button type="submit">Submit Ticket</button>
+    </form>
+</div>

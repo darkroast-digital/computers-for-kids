@@ -1,0 +1,65 @@
+/*
+|--------------------------------------------------------------------------
+| #NAV
+|--------------------------------------------------------------------------
+*/
+
+.nav {
+    width: 100%;
+    position: relative;
+    z-index: z(middle);
+    background: color(white);
+
+    @if ($is-dark) {
+        background: color(black);
+    }
+
+    @if ($nav-is-fixed) {
+        position: fixed;
+    }
+
+    &__container {
+        @include grid($maw: 90%, $mobile: true);
+        align-items: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    @if ($has-shadow) {
+        @include shadow(raised);
+    }
+
+    &__navbar {
+        list-style-type: none;
+        display: flex;
+        align-items: stretch;
+        height: 100%;
+        padding: 0;
+
+        @if ($nav-is-right) {
+            @include flex-right();
+        }
+
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+
+    .hamburger {
+        @include flex-right();
+    }
+
+    li {
+        height: 100%;
+    }
+
+    a {
+        color: color(font);
+        //padding: .75rem;
+        transition: all .3s ease(inOutQuad);
+
+        &:hover {
+            color: lighten(color(font), 25%);
+        }
+    }
+}

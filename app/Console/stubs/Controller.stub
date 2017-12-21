@@ -1,0 +1,14 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Controllers\Controller;
+
+class DummyClass extends Controller
+{
+    public function METHODNAME($request, $response, $args)
+    {
+        //
+    }
+}
+

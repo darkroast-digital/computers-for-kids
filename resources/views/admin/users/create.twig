@@ -1,0 +1,38 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}Create User{% endblock %}
+{% block pageclass %}createUser{% endblock %}
+
+{% block content %}
+
+{% include 'admin/header.twig' %}
+
+<section class="createUser-content admin">
+    <div class="createUser-content__container container">
+        <h1>Create User</h1>
+        <form action="{{ path_for('users.create') }}" method="post" class="form new-post-form" enctype="multipart/form-data">
+            <div class="container--full">
+                <div class="column-3 image">
+                    <label class="featured-image image-upload"><input type="file" name="featured"> <span>Set Avatar</span> <img src="" draggable="false" class="image-preview"></label>
+                </div>
+
+                <div class="column-9 details">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="John Doe" required>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Value" required>
+                    <label for="position">Position</label>
+                    <input type="text" name="position" id="position"  placeholder="Sales">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email"  placeholder="johndoe@sales.com" required>
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" placeholder="555-5555">
+                    <p>Admin 
+                    <label class="toggle"><input type="checkbox" name="admin"><span class="toggle-button"></span></label></p>
+                    <button class="button submit">Save User</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

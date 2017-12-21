@@ -1,0 +1,118 @@
+/*
+|--------------------------------------------------------------------------
+| #ALERT
+|--------------------------------------------------------------------------
+|
+| Alert Chip with modifier classes
+|
+| .alert--notify positions alert
+| to bottom of window
+|
+*/
+
+
+
+.alert {
+    padding: .75rem 1rem;
+    background: color(white);
+    
+    @if ($is-background-white) {
+        background: lighten(color(grey-lightest), 1%);
+    }
+
+    border-left: solid 5px color(black);
+    color: color(black);
+    margin-bottom: calc((#{$baseline} - #{ms(6)}) + #{$baseline * 1.5});
+    position: absolute;
+    width:100%;
+    z-index:100;
+
+    @if ($is-dark) {
+        background: color(grey-darkest);
+        border-left-color: color(white);
+        color: color(white);
+    }
+
+    @if ($has-shadow) {
+        @include shadow(raised);
+    }
+
+    p {
+        max-width: 90%;
+        margin-bottom: 0;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 25px;
+        width: 25px;
+        background: color(black) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMNJREFUeNrs3EENgDAMQNEVBUhAAhImBWlIQgIScFAmgSw7LOG9S2/Nln9vKQAAAPxazPy4zNzaOAavPSPilr4vSM3x6sx/XmQXBEEEQRBBEEQQBBEEQRBEEAQRBEEEQRBBEARBBEEQQRBEEAQRBEEQRBAEEQRBBEEQQRAEQQRBEEEQRBAEEQRBEEQQAAAA4JPZb7+vbeyD114R8UjfF8TtdwRBEEEQRBAEEQRBBEEQBBEEQQRBEEEQRBAAAAAASnkFGABIhrbfbIwnQwAAAABJRU5ErkJggg==") center center no-repeat;
+        background-size: 10px;
+        background-position: center center;
+        border-bottom-left-radius: 10px;
+
+        @if ($is-dark) {
+            background-color: color(white);
+        }
+    }
+
+    @if ($has-radius) {
+        overflow: hidden;
+        border-radius: radius(small);
+    }
+
+    &--primary {
+        color: color(primary);
+        border-left-color: color(primary);
+
+        &:before {
+            background-color: color(primary);
+        }
+    }
+
+    &--secondary {
+        color: color(secondary);
+        border-left-color: color(secondary);
+
+        &:before {
+            background-color: color(secondary);
+        }
+    }
+
+    &--success {
+        color: color(success);
+        border-left-color: color(success);
+
+        &:before {
+            background-color: color(success);
+        }
+    }
+
+    &--warning {
+        color: color(warning);
+        border-left-color: color(warning);
+
+        &:before {
+            background-color: color(warning);
+        }
+    }
+
+    &--error {
+        color: color(error);
+        border-left-color: color(error);
+
+        &:before {
+            background-color: color(error);
+        }
+    }
+
+    &--notify {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: z(highest);
+    }
+}

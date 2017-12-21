@@ -1,0 +1,27 @@
+<nav class="sidebar">
+    
+    <a href="{{ path_for('home') }}" class="sidebar__brand"><img src="/assets/img/logo.svg" alt="Sylph"></a>
+
+    <div class="sidebar__container">
+        <h4>Documentation</h4>
+
+        <h6>Getting Started</h6>
+        <hr>
+        <ul>
+            <li><a href="{{ path_for('docs.introduction') }}">Introduction</a></li>
+            <li><a href="{{ path_for('docs.installation') }}">Installation</a></li>
+            <li><a href="{{ path_for('docs.design') }}">Design</a></li>
+            <li><a href="{{ path_for('docs.configuration') }}">Configuration</a></li>
+            <li><a href="{{ path_for('docs.colours') }}">Colours</a></li>
+            <li><a href="{{ path_for('docs.typography') }}">Typography</a></li>
+        </ul>
+
+        <h6>Components</h6>
+        <hr>
+        <ul>
+            {% for item in components %}
+                <li><a href="{{ path_for('docs.components', { 'slug': item }) }}">{{ item | capitalize }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

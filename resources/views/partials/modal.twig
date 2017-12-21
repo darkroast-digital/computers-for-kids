@@ -1,0 +1,467 @@
+{# DONATIONS MODAL #}
+
+<div class="modal" data-modal="one">
+    <div class="block column-12">
+        <section class="tabs">
+            <ul class="tabs__nav">
+                <li data-tab="1" class="is--active">Computers & Electronics</li>
+                <li data-tab="2">Non-Electronic Goods</li>
+                <li data-tab="3">Corporate Pick-Up Service</li>
+            </ul>
+            <div class="tabs__body">
+                <div class="tabs__content is--active" data-tab="1">
+                    <div class="container">
+                        <h6>Computers & Electronics</h6>
+                        <p>We rely on the donation of computers to fulfill the requests of deserving applicants. Without your generous donations, we wouldn't be able to provide our community with this type of service. We will put to good use computer of any age and type. Once deemed re-usable, our technicians repair and refurbish the donated computers.</p>
+                        <p>Because data security is extremely important to us, no computer is donated without having its hard drive wiped clean. We ensure that all of a donated computer's existing data is eliminated and we install a new operating system on each unit before it reaches its new owner. Any hard drive which is designated for recycling is dismantled and shredded.</p>
+                        <h5>We accept working or not:</h5>
+                        <ul>
+                            <li>Any computers or equipment</li>
+                            <li>Computer accessories (mice, keyboards, power cords, etc.)</li>
+                            <li>Computer peripherals (printers, fax machines, scanners, etc...)</li>
+                            <li>Cell phones</li>
+                            <li>CRT & LCD computer monitors</li>
+                            <li>All Televisions</li>
+                            <li>All Audio / Video Equipment</li>
+                            <li>All non-ferrous and precious metals</li>
+                            <li>Copper based wiring</li>
+                            <li>Batteries</li>
+                        </ul>
+
+                        <h5>We do not accept the following:</h5>
+                        <ul>
+                            <li>Household Refuse</li>
+                            <li>Vehicle Tires</li>
+                            <li>Air Conditioners</li>
+                            <li>Software</li>
+                            <li>Cleaning Supplies</li>
+                            <li>Packaging Materials</li>
+                            <li>Smoke Alarms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="2">
+                    <div class="container">
+                        <h6>Non-Electronic Goods</h6>
+                        <p>You can also assist our organization by donating non-electronic items. We will also put to good use:</p>
+                        <ul>
+                            <li>Steel</li>
+                            <li>Copper</li>
+                            <li>Aluminum</li>
+                            <li>Microwaves</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="3">
+                    <div class="container">
+                        <h6>Corporate Pick-Up Service</h6>
+                        <p>We offer a free pick-up service for businesses and organizations which have equipment to donate if they meet the following criteria:</p>
+                        <ul>
+                            <li>Must be located in Windsor or surrounding area</li>
+                            <li>We request that you make every effort to have your donation easily accessible</li>
+                        </ul>
+                        <p>Charitable tax receipts are available for all equipment donations which have an estimated value in excess of $200.</p>
+                        <p>Please fill out the following form to request corporate pick-up service:</p>
+                        
+                        <form action="{{ path_for('home') }}" method="post" class="form pick-up-service-form">
+                            <input type="hidden" name="type" value="Pick-Up Service Request">
+                            <input type="text" name="name" id="name" placeholder="Contact Name" required>
+                            <input type="text" name="company" id="company" placeholder="Company" required>
+                            <input type="text" name="phone" id="phone" placeholder="Phone" required>
+                            <input type="email" name="email" id="email" placeholder="E-mail" required>
+                            <textarea name="details" id="details" placeholder="Details about your event" required></textarea>
+                            <button class="button submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+{# PARTNERS MODAL #}
+
+<div class="modal" data-modal="two">
+    <div class="block column-6">
+        <section class="tabs">
+            <ul class="tabs__nav">
+                <li data-tab="1" class="is--active">Corporate Donors</li>
+                <li data-tab="2">Community Organizers</li>
+                <li data-tab="3">Grants & Affiliations</li>
+            </ul>
+            <div class="tabs__body">
+                <div class="tabs__content is--active" data-tab="1">
+                    <div class="container">
+                        <h6>Corporate Donors</h6>
+                        <p>Our organization is built for our community by our community. Many thanks to these businesses and organizations which have generously donated in order to further reach our cause:</p>
+                        <ul>
+                            <li>A-Channel</li>
+                            <li>AG Simpson</li>
+                            <li>Ambassador Dental Group</li>
+                            <li>Ambassador Insurance</li>
+                            <li>AON Insurance</li>
+                            <li>Architectura</li>
+                            <li>Arrow Mailing</li>
+                            <li>Audio Tek</li>
+                            <li>Baker Investments</li>
+                            <li>Bellwood Poultry</li>
+                            <li>Big Brothers Big Sisters</li>
+                            <li>Brian Masse, MP Windsor West</li>
+                            <li>Buckingham Realty</li>
+                            <li>Calframax</li>
+                            <li>Canada Customs</li>
+                            <li>Career Development Services</li>
+                            <li>CAW Local 444</li>
+                            <li>CBC Windsor</li>
+                            <li>Central Plastics</li>
+                            <li>Chamber of Commerce</li>
+                            <li>Chrome Shield</li>
+                            <li>City Of Windsor</li>
+                            <li>CKLW</li>
+                            <li>Colasanti’s</li>
+                            <li>Colbro Equipment</li>
+                            <li>Coles Metal</li>
+                            <li>Community Living Essex County</li>
+                            <li>CompuQuote</li>
+                            <li>Coyle’s Jewelers</li>
+                            <li>Credit Counselling</li>
+                            <li>Crossroads</li>
+                            <li>Daimler Chrysler Financial Services</li>
+                            <li>Detroit Lions</li>
+                            <li>Detroit Windsor Tunnel</li>
+                            <li>DriveMax</li>
+                            <li>Duke Energy</li>
+                            <li>Dynamic Tool</li>
+                            <li>Elizabeth Papp Law Firm</li>
+                            <li>Enwin Utilities</li>
+                            <li>Essex Power</li>
+                            <li>Essex United Church</li>
+                            <li>Essex-Windsor Sold Waste Authority</li>
+                            <li>Express Moulding</li>
+                            <li>Falcon Tool & Die</li>
+                            <li>Fleetwood Metal</li>
+                            <li>Flex n Gate</li>
+                            <li>Ford Windsor Casting Plant</li>
+                            <li>Green Shield Canada</li>
+                            <li>Ground Effects</li>
+                            <li>Gus Revenberg</li>
+                            <li>Habitat Restore</li>
+                            <li>Halmark Memorial</li>
+                            <li>Heinz</li>
+                            <li>Hiram Walker</li>
+                            <li>Hotel Dieu</li>
+                            <li>House of Shalom Youth Centre</li>
+                            <li>Intergram Seating</li>
+                            <li>Jefferson Metal</li>
+                            <li>Joe Comartin MP Windsor—Tecumseh</li>
+                            <li>Johnson Marshall Insurance</li>
+                            <li>Kamin Fisher Law Firm</li>
+                            <li>Lakeside Plastic</li>
+                            <li>Lekter Industrial</li>
+                            <li>Loaring Construction</li>
+                            <li>Manpower</li>
+                            <li>Maryvale</li>
+                            <li>Motor City Credit Union</li>
+                            <li>Mr. Safety Shoes</li>
+                            <li>Multicultural Council of Windsor-Essex County</li>
+                            <li>Navastar</li>
+                            <li>Netmedia</li>
+                            <li>Noble Trade</li>
+                            <li>New Beginnings</li>
+                            <li>Omstead Foods</li>
+                            <li>PBL Insurance</li>
+                            <li>PC Outfitters</li>
+                            <li>Pelee Hydroponics</li>
+                            <li>Precision Jewelers</li>
+                            <li>QDMac</li>
+                            <li>Quality Caps</li>
+                            <li>Quality Safety Systems</li>
+                            <li>RBC Ministries</li>
+                            <li>Reko</li>
+                            <li>Rose City Ford* (Vehicle Donation)</li>
+                            <li>Rotary Club of Windsor</li>
+                            <li>Russell A Farrow</li>
+                            <li>Salvation Army</li>
+                            <li>Sandra Pupatello, MPP Windsor-West</li>
+                            <li>Science Center</li>
+                            <li>Sentrix Computer</li>
+                            <li>Shoppers Drug Mart</li>
+                            <li>Shur-lok Ltd.</li>
+                            <li>Souillere Financial</li>
+                            <li>Southland Insurance</li>
+                            <li>St. Clair College Windsor</li>
+                            <li>St.Vincent de Paul</li>
+                            <li>Teen Health Center</li>
+                            <li>The Greater Essex County District School Board</li>
+                            <li>The Windsor Star</li>
+                            <li>The Windsor-Essex Catholic District School Board</li>
+                            <li>Town of Kingsville</li>
+                            <li>Town of Lakeshore</li>
+                            <li>Trios College</li>
+                            <li>Unemployed Help Center</li>
+                            <li>University Of Windsor</li>
+                            <li>Valiant Tool & Mold</li>
+                            <li>Vans LTL Courier</li>
+                            <li>Veltri</li>
+                            <li>Ventra Plastics</li>
+                            <li>Walbridge Aldinger</li>
+                            <li>Windsor Family Credit Union</li>
+                            <li>Windsor Occupational Health Information Service</li>
+                            <li>Windsor Salt</li>
+                            <li>Windsor Welding</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="2">
+                    <div class="container">
+                        <h6>Community Organizers</h6>
+                        <p>Our partnerships with the following community organizations have allowed us the opportunity to create computer labs to service Windsor/Essex County youth:</p>
+                        <ul>
+                            <li>Amherstburg Early Learning Center</li>
+                            <li>Ashgrove Manor</li>
+                            <li>Essex County Chinese Association</li>
+                            <li>Essex Youth Center</li>
+                            <li>Jefferson Community Center</li>
+                            <li>Lakeshore Community Center</li>
+                            <li>New Beginnings</li>
+                            <li>Multi-Cultural Council of Windsor/Essex</li>
+                            <li>Reach For The Skye</li>
+                            <li>Riverside United Church</li>
+                            <li>Skills Link Canada "West Side Pride"</li>
+                        </ul>
+
+                        <p>In addition to the above, we are pleased to have provided computers to families through the following referring agencies:</p>
+                        <ul>
+                            <li>City of Windsor Social Services</li>
+                            <li>Windsor/Essex Children's Aid Society</li>
+                            <li>Immaculate Conception</li>
+                            <li>Help Link</li>
+                            <li>Canadian Natioanl Institute for the Blind</li>
+                            <li>Unemployed Help Centre</li>
+                            <li>H.J. Lassaline School</li>
+                            <li>Kennedy Collegiate</li>
+                            <li>Hugh Beaton</li>
+                            <li>Autism Ontario</li>
+                            <li>Childrens Health Care Network</li>
+                            <li>F.W. Begley Public School</li>
+                            <li>General Brock Elementary</li>
+                            <li>Marlborough Public School</li>
+                            <li>Prince Edward Public School</li>
+                            <li>Western Secondary School</li>
+                            <li>Family Respite Services</li>
+                            <li>John Campbell Public</li>
+                            <li>Victim Witness Assist</li>
+                            <li>Dougall Public</li>
+                            <li>St. Josephs Catholic High School</li>
+                            <li>Northwood Public School</li>
+                            <li>Mount Carmel-Blytheswood</li>
+                            <li>Queen Victoria Public</li>
+                            <li>Our Lady of Perpetual Help</li>
+                            <li>D.M. Eagle</li>
+                            <li>Windsor Women working with Immigrant women</li>
+                            <li>New Canadian Centre of Excellence</li>
+                            <li>Windsor Regional Childrens Centre</li>
+                            <li>YMCA</li>
+                            <li>Passages</li>
+                            <li>Multicultural Council of Windsor</li>
+                            <li>Teen Health Centre</li>
+                            <li>Health Unit</li>
+                            <li>New Beginnings</li>
+                            <li>Herman School</li>
+                            <li>J.L. Forster</li>
+                            <li>CAW Local 200</li>
+                            <li>Glengarda</li>
+                            <li>Concord Public School</li>
+                            <li>Community Living</li>
+                            <li>Roseville School</li>
+                            <li>Citizen Advocacy</li>
+                            <li>Maryvale</li>
+                            <li>St. Clair College</li>
+                            <li>Walkerville Collegiate</li>
+                            <li>Harrow Junior Public School</li>
+                            <li>Davis Public School</li>
+                            <li>Sandwich Community Health Centre</li>
+                            <li>Eastwood Public School</li>
+                            <li>John McGivney Childrens Centre</li>
+                            <li>Windsor Homes Coalition Centre</li>
+                            <li>Lajaunesse High School</li>
+                            <li>ABC Day Nursery of Windsor</li>
+                            <li>F.J. Brennan Catholic High School</li>
+                            <li>Forest Glade Public School</li>
+                            <li>Prince Andrew Public School</li>
+                            <li>Leamington District High School</li>
+                            <li>Leamington Area Ecumenical Refugee</li>
+                            <li>Glenwood Elementary School</li>
+                            <li>Victoria Public School</li>
+                            <li>St. Vincent de Paul</li>
+                            <li>Century Secondary School</li>
+                            <li>St. Josephs Health Care London/Windsor ACT Team</li>
+                            <li>St. Marys Family Learning Centre</li>
+                            <li>Big Brothers Big Sisters Windsor Essex</li>
+                            <li>St. Bernard Catholic School</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="3">
+                    <div class="container">
+                        <h6>Grants & Affiliations</h6>
+                        <p>Since our inception, several grants have made it possible for us develop and expand our program. This instrumental funding has given us chance to grow as an organization and touch the lives of more children than ever would have been possible without them.</p>
+                        <h5>Grants</h5>
+                        <ul>
+                            <li><a href="http://www.trilliumfoundation.org/" target="_blank">Ontario Trillium Foundation</a></li>
+                            <li><a href="http://www.edu.gov.on.ca/eng/tcu/employers/jobCreation.html" target="_blank">Province Of Ontario Job Creation Program</a></li>
+                            <li><a href="http://www.nationalchildbenefit.ca/" target="_blank">National Child Benefit</a></li>
+                            <li><a href="http://www.rbcroyalbank.com/" target="_blank">Royal Bank of Canada</a></li>
+                            <li><a href="http://www.greenshield.ca/english" target="_blank">Green Shield Canada</a></li>
+                            <li><a href="http://www.cawlocal200.org/club_200.htm" target="_blank">Club 200 Youth Activities</a></li>
+                            <li><a href="http://www.caw.ca/en/services-departments-social-justice-fund.htm" target="_blank">CAW National Union’s Social Justice Fund</a></li>
+                            <li><a href="http://rosecityford.com/" target="_blank">Rose City Ford</a></li>
+                            <li><a href="http://www.fef.td.com/" target="_blank">TD Canada Friends of the Environment</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+{# STATISTICS MODAL #}
+
+<div class="modal" data-modal="three">
+    <div class="block column-6">
+        <section class="tabs">
+            <ul class="tabs__nav">
+                <li data-tab="1" class="is--active">Computer Placements</li>
+                <li data-tab="2">E-Waste Recycling</li>
+                <li data-tab="3">Kids Safety</li>
+            </ul>
+            <div class="tabs__body">
+                <div class="tabs__content is--active" data-tab="1">
+                    <div class="container">
+                        <h6>Computer Placements</h6>
+                        <p>Relationships with the following local organizations dedicated to the betterment of our community's youth have allowed us to locate and assist the children who need our help the most:</p>
+                        <ul>
+                            <li><a href="http://www.citywindsor.ca/000576.asp" target="_blank">City Of Windsor Social Services</a></li>
+                            <li><a href="http://www.oacas.org/" target="_blank">Children’s Aid Society</a></li>
+                            <li><a href="http://www.communitylivingessex.org/" target="_blank">Community Living Essex/Windsor</a></li>
+                            <li><a href="http://www.bbbsc.ca/defaultlanguage.asp" target="_blank">Big Brothers Big Sisters</a></li>
+                            <li><a href="http://www.autismontario.com/" target="_blank">Autism Ontario</a></li>
+                            <li><a href="http://www.autismsocietycanada.ca/" target="_blank">Autism Society</a></li>
+                            <li><a href="http://services.familyrespite.org/" target="_blank">Family Respite Services</a></li>
+                            <li><a href="http://www.wrh.on.ca/Site_Published/wrh_internet/windsorregionalnonav.aspx?Body.QueryId.Id=7535&LeftNav.QueryId.Categories=169" target="_blank">Windsor Regional Children’s Center</a></li>
+                            <li>Help Link</li>
+                            <li><a href="http://www.cnib.ca/" target="_blank">CNIB</a></li>
+                            <li><a href="http://www.wwwwiw.org/" target="_blank">Windsor Women Working With Immigrants</a></li>
+                            <li>Maryvale</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="2">
+                    <div class="container">
+                        <h6>E-Waste Recycling</h6>
+                        <p>What is electronic waste? Electronic waste is defined as any broken or unwanted electronic device. When e-waste is not properly recycled, it can be very damaging to the environment and cause health concerns because of the toxicity and carcinogenicity of these products.</p>
+                        <p>Electronic waste is the fastest growing waste stream in our society and needs to be recycled just as any paper, plastic or tin product in our home or office. Unfortunately in our society, only 15% of electronic waste is currently being recycled properly. E-waste can leach and pollute our water when left in landfills.</p>
+                        <p>No industry sector is moving faster than computers and technology. The demand for the “latest and greatest” electronic gadget means an excess in “outdated” electronics. Here are some interesting facts to consider:</p>
+                        <ul>
+                            <li>An average computer life span for original user is two years</li>
+                            <li>An average cell phone life span for original user is one year</li>
+                            <li>New breakthroughs in technology occur approx. every six weeks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="3">
+                    <div class="container">
+                        <h6>Kids Safety</h6>
+                        <p>The internet can be a useful tool and source of entertainment for the entire family. For kids in particular, the world wide web is a wonderful resource that can be used to play interactive games, communicate with peers and research school reports. Kids who are old enough to use a mouse and keyboard can literally have the world at their fingertips! Yet despite its extraordinary potential, the internet can pose hazards for children and adults alike. It's important to be aware of what your kids do and see online. Now is the time to teach your children about the dangers and benefits of being connected. Here are some helpful tips for keeping your kids safe when using the internet:</p>
+                        <ul>
+                            <li>Keep the computer in a central location where the screen is visible to everyone.</li>
+                            <li>Invite your children to show you their favourite websites as a way to positively monitor them.</li>
+                            <li>Learn about parental control software and don’t be afraid to use it!</li>
+                            <li>Maintain access to any account your child opens online and don’t be afraid to do a spot check!</li>
+                        </ul>
+                        
+                        <p>Unmonitored internet usage may mean increased exposure to online predators and innapropriate content. Keep your children informed of danger signs with these tips:</p>
+                        <ul>
+                            <li>Never arrange to meet someone in person that you have met online</li>
+                            <li>Never upload or share personal files or photos with someone you don’t personally know</li>
+                            <li>Never give out personal information such as your home address, or phone number</li>
+                            <li>Always remember that what people tell you online may not always be the truth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+{# MEDIA MODAL #}
+
+<div class="modal" data-modal="four">
+    <div class="block column-6">
+        <section class="tabs">
+            <ul class="tabs__nav">
+                <li data-tab="1" class="is--active">Events Calendar</li>
+                <li data-tab="2">Event Application Form</li>
+                <li data-tab="3">Media Coverage</li>
+                <li data-tab="4">Photo Gallery</li>
+            </ul>
+            <div class="tabs__body">
+                <div class="tabs__content is--active" data-tab="1">
+                    <div class="container">
+                        <h6>Events Calendar</h6>
+                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=cfk2009%40gmail.com&amp;color=%23691426&amp;ctz=America%2FToronto" style="border-width:0" width="600" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="2">
+                    <div class="container">
+                        <h6>Event Application Form</h6>
+                        <p>Interested in collaborating with Computers For Kids to host an event? CFK is always looking for opportunities to partner with like-minded organizations to raise funds, spread awareness, and improve our community. Fill out the form below for more information about the many event hosting options available with Computers For Kids!</p>
+                        <form action="{{ path_for('home') }}" method="post" class="form event-app-form">
+                            <input type="hidden" name="form-type" value="Event Application">
+                            <input type="text" name="name" id="name" placeholder="Contact Name" required>
+                            <input type="text" name="company" id="company" placeholder="Company" required>
+                            <input type="text" name="phone" id="phone" placeholder="Phone" required>
+                            <input type="email" name="email" id="email" placeholder="E-mail" required>
+                            <textarea name="details" id="details" placeholder="Details about your event" required></textarea>
+                            <button class="button submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="3">
+                    <div class="container">
+                        <h6>Media Coverage</h6>
+                        <h5>Media</h5>
+                        <p>Click on an icon to download media.</p>
+                        <ul>
+                            <li><a href="assets/content/CBC_0001.wmv" download><i class="fa fa-download" aria-hidden="true"></i> CBC Windsor News Coverage by Pat Jeflyn on CAW Local 200 Computers for Kids</a></li>
+                            <li><a href="assets/content/CFKppt.exe" download><i class="fa fa-download" aria-hidden="true"></i> CFKppt.exe</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tabs__content" data-tab="4">
+                    <div class="container">
+                        <h6>Photo Gallery</h6>
+                        <p>To be added</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,200 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}Home{% endblock %}
+{% block pageclass %}home{% endblock %}
+
+{% block content %}
+
+<section class="header">
+    <div class="header-bar">
+        <div class="header-bar__container container">
+            <div class="socials">
+                <a href="http://www.facebook.com/pages/CAW-Local-200-Computers-for-Kids/191781314116"><i class="fa fa-facebook"></i></a>
+                <a href="http://twitter.com/CFKCanada"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+            </div>
+
+            <div class="cta">
+                <p>Have any Questions? <a href="tel:519-253-5437">Call Us Now</a></p>
+            </div>
+        </div>
+
+        {% include 'partials/nav.twig' %}
+    </div>
+</section>
+
+<section class="hero">
+    <div class="hero__container container">
+        <img src="assets/img/logo.png" alt="C.A.W. Local 200 Computers for Kids"  draggable="false">
+        <h1>A stronger community is just a click away!</h1>
+        <a href="#contact" class="button">Contact Us</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about__container container">
+        <div class="column-5 empty"></div>
+
+        <div class="column-7 content">
+            <h2>About Us</h2>
+            <img src="assets/img/hr.png" draggable="false">
+            <p>Computers For Kids is a registered charity comprised of working people who are dedicated to improving the lives of everyone in our community through education and training.</p>
+            <p>Our innovative approach to technology transforms unwanted computers into educational tools for children. Increased reliance on computers in our society has made availability of computers and computer training to our youth increasingly important.</p>
+
+            <div class="pois container--full">
+                <div class="poi column-4">
+                    <img src="assets/img/about-laptop.png" draggable="false">
+                    <p>Over 2000 computers donated to children in need</p>
+                </div>
+
+                <div class="poi column-4">
+                    <img src="assets/img/about-classroom.png" draggable="false">
+                    <p>40+ after school & summer programs serviced</p>
+                </div>
+
+                <div class="poi column-4">
+                    <img src="assets/img/about-ewaste.png" draggable="false">
+                    <p>Over 2.5 million lbs. of e-waste recycled</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <div class="cta__container container--full">
+            <div class="column-3"></div>
+
+            <div class="column-6">
+                <h3>Make a Contribution</h3>
+                <p>We rely on the donation of computers to fulfill the requests of deserving applicants. Without your generous donations, we wouldn't be able to provide our community with this type of service.</p>
+            </div>
+
+            <div class="column-3">
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3651662" target="_blank" class="button">Donate Today</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="faq__container container">
+        <h2>Frequently Asked Questions</h2>
+        <img src="assets/img/hr.png" draggable="false">
+
+        {% include 'partials/accordion.twig' %}
+    </div>
+</section>
+
+<section class="news" id="news">
+    <div class="news__container container">
+        <h2>Latest News</h2>
+        <img src="assets/img/hr.png" draggable="false">
+
+        <div class="news-posts">
+            <div class="news-posts__container container--full">
+                {% for post in activePosts %}
+                    <div class="post column-4">
+                        <div class="img-container">
+                            <img src="/assets/uploads/posts/{{ post.id }}/featured.jpg" draggable="false">
+                            <p class="datePosted">
+                                <span>{{ post.created_at|date("d") }}</span><br/>
+                                {{ post.created_at|date("M y") }}
+                            </p>
+                        </div>
+                        <h6><a href="{{ path_for('viewPost', { 'slug': post.slug }) }}">{{ post.title }}</a></h6>
+                        <p><span><i class="fa fa-user" aria-hidden="true"></i> Posted by: {{ post.author }}</p>
+                        <p>{{ post.body|slice(0, 200) }}...</p>
+                        <a href="{{ path_for('viewPost', { 'slug': post.slug }) }}">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="other" id="other">
+    <div class="other__container container">
+        <div class="column-12">
+            <h2>Other Information</h2>
+            <img src="assets/img/hr.png" draggable="false">
+        </div>
+
+        <div class="column-4 empty"></div>
+
+        <div class="column-8 content">
+            <div class="content__container container--full">
+                <div class="column-6 info modal__trigger" data-modal="one">
+                    <img src="assets/img/donations-icon.png" class="icon" draggable="false">
+                    <h4>Donations</h4>
+                    <img src="assets/img/hr2.png" class="hr" draggable="false">
+                    <p>Click here for information on accepted computer & electronic donations, non-electronic donations and corporate pickup services.</p>
+                </div>
+
+                <div class="column-6 info modal__trigger" data-modal="two">
+                    <img src="assets/img/partners.png" class="icon" draggable="false">
+                    <h4>Community Partners</h4>
+                    <img src="assets/img/hr2.png" class="hr" draggable="false">
+                    <p>Click here for information on our corporate donors & community organizations, as well as grants and affiliations.</p>
+                </div>
+
+                <div class="column-6 info modal__trigger" data-modal="three">
+                    <img src="assets/img/statistics-icon.png" class="icon" draggable="false">
+                    <h4>Statistics</h4>
+                    <img src="assets/img/hr2.png" class="hr" draggable="false">
+                    <p>Under Construction</p>
+                </div>
+
+                <div class="column-6 info modal__trigger" data-modal="four">
+                    <img src="assets/img/media-icon.png" class="icon" draggable="false">
+                    <h4>Media & Events</h4>
+                    <img src="assets/img/hr2.png" class="hr" draggable="false">
+                    <p>Click here for links to related media coverage, as well as our event calendar & downloadable event planning forms.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="contact__container container">
+        <div class="method column-4">
+            <img src="assets/img/address-icon.png" draggable="false">
+            <div class="details">
+                <h6>Address:</h6>
+                <p>4150 Sandwich St, Windsor<br/>
+                    ON, Canada, N9C 1C5</p>
+                <a href="https://www.google.ca/maps/dir/''/4150+Sandwich+St,+Windsor,+ON+N9C+1C5/@42.2835646,-83.0892396,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x883b320cd66b294d:0x8075f514a3ba6b5b!2m2!1d-83.0870509!2d42.2835646" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i> Visit Us</a>
+            </div>
+        </div>
+
+        <div class="method column-4">
+            <img src="assets/img/email-icon.png" draggable="false">
+            <div class="details">
+                <h6>Email</h6>
+                <p>info@cfkcanada.org</p>
+                <a href="mailto:info@cfkcanada.org"><i class="fa fa-angle-right" aria-hidden="true"></i> Mail Us</a>
+            </div>
+        </div>
+
+        <div class="method column-4">
+            <img src="assets/img/phone-icon.png" draggable="false">
+            <div class="details">
+                <h6>Phone:</h6>
+                <p>519-253-5437</p>
+                <h6>Fax:</h6>
+                <p>519-253-5600</p>
+                <a href="tel:519-253-5437"><i class="fa fa-angle-right" aria-hidden="true"></i> Call Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="footer__container container">
+        <p>&copy; 2017 Computers For Kids. All Rights Reserved</p>
+    </div>
+</section>
+
+{% include 'partials/modal.twig' %}
+
+{% endblock %}

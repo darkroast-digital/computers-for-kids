@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <td></td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Created</td>
+            <td>Role</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+            <tr>
+                <td data-th="Avatar">
+                    <div class="img-container">
+                        <img src="/assets/uploads/avatars/{{ result.id }}/avatar.jpg">
+                    </div>
+                </td>
+                <td data-th="Name"><a href="{{ path_for('users.view', { 'id': result.id } ) }}">{{ result.name }}</a></td>
+                <td data-th="Email">{{ result.email }}</td>
+                <td data-th="Created">{{ result.created_at|date("d/m/Y") }}</td>
+                <td data-th="Role">{{ result.role }}</td>
+                <td>{% if auth.user.role == 'admin' %}<a href="{{ path_for('users.delete', { 'id': result.id }) }}"><i class="fa fa-trash" aria-hidden="true"></i></a> {% endif %}{% if (auth.user.role == 'admin') or (auth.user.id == result.id) %}<a href="{{ path_for('users.edit', { 'id': result.id }) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

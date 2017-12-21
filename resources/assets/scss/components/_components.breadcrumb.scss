@@ -1,0 +1,40 @@
+/*
+|--------------------------------------------------------------------------
+| #BREADCRUMB
+|--------------------------------------------------------------------------
+*/
+
+
+
+.breadcrumb {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+
+    a {
+        color: inherit;
+        display: block;
+    }
+
+    li {
+        position: relative;
+        display: flex;
+        color: color(grey);
+
+        &:after {
+            content: '/';
+            padding: 0 1rem;
+        }
+
+        &:last-of-type {
+
+            &:after {
+                content: '';
+            }
+
+            a {
+                color: color(font);
+            }
+        }
+    }
+}

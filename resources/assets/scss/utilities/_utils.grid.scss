@@ -1,0 +1,65 @@
+/*
+|--------------------------------------------------------------------------
+| #GRID
+|--------------------------------------------------------------------------
+*/
+
+
+
+@for $i from 1 through $columns {
+    %column-#{$i},
+    .column-#{$i} {
+        width: calc(100% * (1 * #{$i} / #{$columns}) - #{$gutter});
+        margin-left: $gutter / 2;
+        margin-right: $gutter / 2;
+
+        @include breakpoint(md) {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+@mixin grid($display: flex, $maw: 80%, $direction: row, $collapse: false, $mobile: false) {
+    display: $display;
+    flex-wrap: wrap;
+    max-width: $maw;
+    margin: 0 auto;
+
+    // @include breakpoint(sm) {
+    //     @if ($mobile) {
+    //         display: flex;
+    //     }
+
+    //     @if ($mobile == false) {
+    //         display: block;
+    //     }
+        
+    //     max-width: 100%;
+    //     padding-left: $gutter;
+    //     padding-right: $gutter;
+    // }
+
+    @if ($collapse) {
+        > [class*="column-"] {
+            margin: 0;
+        }
+    }
+}
+
+.container {
+    @include grid();
+}
+
+.container--full {
+    @include grid($maw: 100%);
+}
+
+.container--block {
+    @include grid($display: block);
+}
+
+.container--collapse {
+    @include grid($collapse: true);
+}

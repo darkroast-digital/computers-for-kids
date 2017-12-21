@@ -1,0 +1,13 @@
+///* ========================================================================
+//   #Flex Positioning Left and Right
+//   ======================================================================== */
+
+  // Left and Right
+
+@mixin flex-right() {
+	margin-left: auto;
+}
+
+@mixin flex-left() {
+	margin-right: auto;
+}

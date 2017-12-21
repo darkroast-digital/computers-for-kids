@@ -1,0 +1,26 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}Log In{% endblock %}
+{% block pageclass %}login{% endblock %}
+
+{% block content %}
+
+<section class="login-content admin">
+    <div class="login-content__container container">
+        <div class="logo-container column-5">
+            <img src="/assets/img/logo-white.png" alt="Computers for Kids Home">
+        </div>
+
+        <div class="form-container column-7">
+            <h1>Login</h1>
+            <form action="{{ path_for('login') }}" method="post" class="form login-form">
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+                <button class="button submit">Log In</button>
+            </form>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

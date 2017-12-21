@@ -1,0 +1,70 @@
+/*
+|--------------------------------------------------------------------------
+| #OFF CANVAS
+|--------------------------------------------------------------------------
+|
+| Adding .off-canvas--left will position container to left of window
+|
+*/
+
+
+
+.off-canvas, .off-canvas-admin {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    z-index: z(highest);
+    height: 100%;
+    width: 300px;
+    background: color(white);
+    transform: translateX(300px);
+    transition: all .3s ease(inOutQuint);
+    font-size:1.5rem;
+
+    @media screen and (max-width:32em) {
+        width:250px;
+    }
+
+    ul {
+        margin-bottom:2rem;
+        list-style-type:none;
+        padding-left:0;
+
+        li {
+            margin-bottom:1.5rem;
+        }
+    }
+
+    p {
+        margin-bottom:0;
+    }
+
+    @if ($has-shadow) {
+        box-shadow: -3px 0 0 0 rgba(color(black), .1);
+    }
+
+    &.is--open {
+        transform: translateX(0);
+    }
+
+    &--left {
+        left: 0;
+        right: auto;
+        transform: translateX(-300px);
+    }
+}
+
+.off-canvas-admin {
+
+    ul {
+
+        li {
+
+            a {
+                color:$secondary;
+                font-weight:600;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}Search{% endblock %}
+{% block pageclass %}search{% endblock %}
+
+{% block content %}
+{% include 'admin/header.twig' %}
+
+<section class="search-content admin">
+    <div class="search-content__container container">
+        <div class="title-bar">
+            <h2>Search {{ context|capitalize }}s</h2>
+            <form action="{{ path_for('search', { 'category': context } ) }}" method="get">
+                <div class="field is-search">
+                    <input type="text" class="search" name="q" placeholder="Search...">
+                </div>
+            </form>
+        </div>
+
+        {% include 'admin/search/partials/' ~ context ~ '.twig' %}
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}{% endblock %}
+{% block title %}DummyTitle{% endblock %}
+
+{% block content %}
+
+
+
+{% endblock %}

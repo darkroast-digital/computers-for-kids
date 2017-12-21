@@ -1,0 +1,49 @@
+/*
+|--------------------------------------------------------------------------
+| #MEDIA ITEM
+|--------------------------------------------------------------------------
+*/
+
+
+
+.media-item {
+    $image-size: 75px;
+
+    background: color(white);
+    margin: 1rem 0;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+
+    &__image {
+        height: $image-size;
+        width: $image-size;
+        margin-right: 1rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__body {
+        width: calc(100% - #{$image-size});
+    }
+
+    &__footer {
+
+        ul {
+            display: flex;
+        }
+    }
+
+    @if ($has-radius) {
+        overflow: hidden;
+        border-radius: radius(small);
+    }
+
+    @if ($has-shadow) {
+        @include shadow(raised);
+    }
+}

@@ -1,0 +1,40 @@
+/*
+|--------------------------------------------------------------------------
+| #BADGE
+|--------------------------------------------------------------------------
+*/
+
+
+
+.label {
+    display: inline-block;
+    padding: .15rem 1rem;
+    font-size: .75rem;
+    background: color(black);
+    color: color(white);
+
+    @if ($has-radius) {
+        overflow: hidden;
+        border-radius: radius(round);
+    }
+
+    &--primary {
+        background: color(primary);
+    }
+
+    &--secondary {
+        background: color(secondary);
+    }
+
+    &--success {
+        background: color(success);
+    }
+
+    &--warning {
+        background: color(warning);
+    }
+
+    &--error {
+        background: color(error);
+    }
+}

@@ -1,0 +1,60 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}Create Post{% endblock %}
+{% block pageclass %}createPost{% endblock %}
+
+{% block content %}
+
+{% include 'admin/header.twig' %}
+
+<section class="createPost-content admin">
+    <div class="createPost-content__container container">
+        <h1>Create Post</h1>
+
+        <form action="{{ path_for('posts.create') }}" method="post" class="form new-post-form" enctype="multipart/form-data">
+            <div class="container--full">
+                <div class="column-9 body">
+                    <label for="title">Post Title</label>
+                    <input type="text" name="title" id="title" placeholder="Help Finding Information Online" required>
+                    <label for="body">Post Content</label>
+                    <textarea name="body" id="mde" placeholder="Type Content Here"></textarea>
+                </div>
+                <div class="column-3 info">
+                    <div class="details">
+                        <div class="field">
+                            <p class="visible-label">Visible:</p>
+                            <label class="toggle"><input type="checkbox" name="active" checked><span class="toggle-button"></span></label>
+                        </div>
+                        <div class="field">
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" id="author" value="Admin" required>
+                        </div>
+                        <div class="field date-field">
+                            <label for="created">Created:</label>
+                            <p>{{ "now"|date("d/m/Y H:i:s") }}</p>
+                        </div>
+                        
+                        <button class="button submit">Create Post</button>
+                    </div>
+                    
+                    <div class="image">
+                        <label class="featured-image image-upload"><input type="file" name="featured"> <span>Set Featured Image</span> <img src="" draggable="false" class="image-preview"></label>
+                    </div>
+
+                    <div class="seo">
+                        <h5>Optional SEO Values</h5>
+                        <div class="field">
+                            <label for="page_desc">Page Description:</label>
+                            <textarea name="page_desc" id="page_desc" placeholder="Up to 160 characters" maxlength="160"></textarea>
+                        </div>
+                        <div class="field">
+                            <label for="page_keys">Keywords:</label>
+                            <textarea name="page_keys" id="page_keys" placeholder="Seperate by comma"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

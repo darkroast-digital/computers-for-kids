@@ -1,0 +1,54 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}Edit User{% endblock %}
+{% block pageclass %}editUser{% endblock %}
+
+{% block content %}
+
+{% include 'admin/header.twig' %}
+
+<section class="editUser-content admin">
+    <div class="editUser-content__container container">
+        <form action="{{ path_for('users.update', { 'id': user.id }) }}" method="post" class="form new-post-form" enctype="multipart/form-data">
+            <div class="container--full">
+                <div class="column-3 image">
+                    <label class="featured-image image-upload">Avatar<input type="file" name="avatar"> {% if avatar is null %}<span>Set Avatar</span>{% endif %}<img src="{% if avatar is not null %}/assets/uploads/avatars/{{ user.id }}/avatar.jpg{% endif %}" draggable="false" class="image-preview" {% if avatar is not null %}style="display: block"{% endif %}></label>
+                </div>
+
+                <div class="column-9 info">
+                    <div class="top">
+                        <h1>Edit User: {{ user.name }}</h1>
+                        <div class="options">
+                            <a href="{{ path_for('users.create') }}" class="button option new">Add New</a>
+                            <a href="{{ path_for('users.view', { 'id': user.id }) }}" class="button option view">View User</a>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" value="{{ user.name }}" placeholder="John Doe">
+                        {% if auth.user.id == user.id %}
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" placeholder="Please re-enter your password" required>
+                        {% endif %}
+                        <label for="position">Position</label>
+                        <input type="text" name="position" id="position"  placeholder="Sales" value="{{ user.position }}">
+                        {% if auth.user.id == user.id %}
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email"  placeholder="johndoe@sales.com" value="{{ user.email }}">
+                            <label for="phone">Phone</label>
+                            <input type="tel" name="phone" id="phone" placeholder="555-5555" value="{{ user.phone }}">
+                        {% endif %}
+
+                        {% if auth.user.role == 'admin' %}
+                            <p>Admin 
+                            <label class="toggle"><input type="checkbox" name="admin" {% if user.role == 'admin' %}checked{% endif %}><span class="toggle-button"></span></label></p>
+                        {% endif %}
+                        
+                        <button class="button submit">Save User</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

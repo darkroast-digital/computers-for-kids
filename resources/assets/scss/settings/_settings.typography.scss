@@ -1,0 +1,231 @@
+/*
+|--------------------------------------------------------------------------
+| #TYPOGRAPHY SETTINGS
+|--------------------------------------------------------------------------
+*/
+
+$baseline: ms(2);
+$minScreen: $small;
+$maxScreen: $large;
+$minFont: .9rem;
+$maxFont: ms(0);
+
+html {
+    color: color(font);
+    @include fluid(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
+
+    * {
+        color: inherit;
+        font-family: $font-one;
+        //letter-spacing: -.1px;
+        @include fluid(line-height, $minScreen, $maxScreen, 1.3, 1.4);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: color(heading);
+}
+
+h1 {
+    font-size: ms(6);
+    @include fluid(font-size, $minScreen, $maxScreen, ms(5), ms(6));
+    font-weight: $heading-weight;
+    margin-bottom: calc((#{$baseline} - #{ms(1)}) + #{$baseline});
+}
+
+h2 {
+    @include fluid(font-size, $minScreen, $maxScreen, ms(4), ms(5));
+    font-weight: $heading-weight;
+    margin-bottom: calc((#{$baseline} - #{ms(2)}) + #{$baseline});
+}
+
+h3 {
+    @include fluid(font-size, $minScreen, $maxScreen, ms(3), ms(4));
+    font-weight: $heading-weight;
+    margin-bottom: calc((#{$baseline} - #{ms(3)}) + #{$baseline});
+}
+
+h4 {
+    @include fluid(font-size, $minScreen, $maxScreen, ms(2), ms(3));
+    font-weight: $heading-weight;
+    margin-bottom: calc((#{$baseline} - #{ms(4)}) + #{$baseline});
+}
+
+h5 {
+    @include fluid(font-size, $minScreen, $maxScreen, ms(1), ms(2));
+    font-weight: $heading-weight;
+    margin-bottom: calc((#{$baseline} - #{ms(5)}) + #{$baseline * 1.5});
+}
+
+h6 {
+    @include fluid(font-size, $minScreen, $maxScreen, ms(0), ms(1));
+    font-weight: $heading-weight;
+    margin-bottom: calc((#{$baseline} - #{ms(6)}) + #{$baseline * 1.5});
+}
+
+
+p {
+    margin-bottom: calc((#{$baseline} - #{ms(6)}) + #{$baseline * 1.5});
+}
+
+a {
+    display: inline-block;
+    color: color(primary);
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+i, em {
+    font-style: italic;
+}
+
+mark {
+    color: color(primary);
+    background-color: color(grey-lighter);
+    padding: 0 .5rem;
+
+    @if ($has-radius) {
+        border-radius: radius(small);
+    }
+}
+
+small {
+    font-size: .75rem;
+}
+
+blockquote {
+    border-left: solid 2px color(grey-dark);
+    margin-bottom: calc((#{$baseline} - #{ms(6)}) + #{$baseline * 1.5});
+    padding: 0 1rem;
+
+    footer,
+    cite {
+        margin-top: calc((#{$baseline} - #{ms(6)}) + #{$baseline});
+        font-size: .75rem;
+        color: color(grey);
+
+        &:before {
+            content: '-';
+        }
+    }
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ul,
+ol {
+    padding-left: 1rem;
+
+    ul {
+        list-style-type: circle;
+    }
+}
+
+table {
+    width: 100%;
+}
+
+thead,
+tfoot {
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+}
+
+td,
+th {
+    padding: .75rem;
+}
+
+tbody {
+
+    tr {
+
+        td {
+            position:relative;
+            
+            &:before {
+                content:'';
+                position:absolute;
+                right:18%;
+                bottom:20%;
+                background:rgba(198, 205, 215, .5);
+                width:1px;
+                height:60%;
+
+                @media screen and (max-width:48em) {
+                    right:10%;
+                }
+
+                @media screen and (max-width:32rem) {
+                    right:0;
+                }
+            }
+
+            &:after {
+                content:'';
+                position:absolute;
+                left:0;
+                bottom:0;
+                background:rgba(198, 205, 215, .5);
+                width:100%;
+                height:1px;
+            }
+
+            &:first-of-type {
+
+                &:after {
+                    width:80%;
+                    left:20%;
+                }
+
+                &:before {
+                    background:none;
+                }
+            }
+
+            &:last-of-type {
+
+                &:after {
+                    width:80%;
+                    right:20%;
+                }
+
+                &:before {
+                    background:none;
+                }
+            }
+        }
+    }
+
+
+    tr:last-of-type {
+
+        td {
+
+            &:after {
+                background:none;
+            }
+        }
+    }
+}
+
+
+
+tfoot {
+
+    tr {
+        border-bottom: none;
+    }
+}
+
+code,
+pre {
+    font-family: $font-mono;
+}

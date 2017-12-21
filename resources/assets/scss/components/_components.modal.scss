@@ -1,0 +1,31 @@
+/*
+|--------------------------------------------------------------------------
+| #MODAL
+|--------------------------------------------------------------------------
+*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease(inOutQuint);
+    z-index: z(lower);
+
+    &.is--open {
+        visibility: visible;
+        opacity: 1;
+        z-index: z(higher);
+
+        > * {
+            pointer-events: all;
+        }
+    }
+}

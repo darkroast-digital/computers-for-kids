@@ -1,0 +1,67 @@
+{% extends 'layouts/app.twig' %}
+{% block title %}{{ user.name }}{% endblock %}
+{% block pageclass %}user{% endblock %}
+
+{% block content %}
+{% include 'admin/header.twig' %}
+
+<section class="user-content admin">
+    <div class="user-content__container container">
+        {% if auth.user.role == 'admin' %}
+            <a href="{{ path_for('users.create') }}" class="button">+ New User</a>
+        {% endif %}
+        <div class="container--full">
+            <div class="column-6 overview">
+                <img src="/assets/uploads/avatars/{{ user.id }}/avatar.jpg" draggable="false" style="max-width:500px;align-self:center;">
+                <h1>{{ user.name }}</h1>
+                
+                <div class="options">
+                    {% if (auth.user.role == 'admin') or (auth.user.id == user.id) %}
+                        <a href="{{ path_for('users.edit', { 'id': user.id }) }}" class="button">Edit User</a>
+                    {% endif %}
+                    {% if auth.user.role == 'admin' %}
+                        <a href="{{ path_for('users.delete', { 'id': user.id }) }}" class="button delete">Delete User</a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="column-6 details">
+                <div class="detail">
+                    <h3>Name:</h3>
+                    <p>{{ user.name }}</p>
+                </div>
+                
+                <div class="detail">
+                    <h3>Email:</h3>
+                    <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+                </div>
+                
+                {% if (auth.user.role == 'admin') or (auth.user.id == user.id) %}
+                    <div class="detail">
+                        <h3>Phone</h3>
+                        <p><a href="tel:{{ user.phone }}">{{ user.phone }}</a></p>
+                    </div>
+                {% endif %}
+
+                <div class="detail">
+                    <h3>Position:</h3>
+                    <p>{{ user.position }}</p>
+                </div>
+
+                {% if (auth.user.role == 'admin') or (auth.user.id == user.id) %}
+                    <div class="detail">
+                        <h3>Role:</h3>
+                        <p>{{ user.role }}</p>
+                    </div>
+
+                    <div class="detail">
+                        <h3>Created:</h3>
+                        <p>{{ user.created_at|date("d/m/Y H:i:s") }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
