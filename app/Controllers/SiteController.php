@@ -12,7 +12,12 @@ class SiteController extends Controller
     public function post($request, $response, $args)
     {
         $activePosts = Post::where('active', 1)->get();
+
         $post = Post::where('slug', $args['slug'])->first();
+
+        if ($post == false) {
+            return $response->withRedirect($this->router->pathFor('error404'));
+        }
 
         $featured = null;
         $id = $post->id;

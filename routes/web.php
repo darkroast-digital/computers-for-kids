@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | #WEB
@@ -10,6 +11,7 @@
 
 use App\Controllers\Auth\AuthController;
 use App\Controllers\DashController;
+use App\Controllers\ErrorsController;
 use App\Controllers\HomeController;
 use App\Controllers\PostsController;
 use App\Controllers\SearchController;
@@ -24,6 +26,7 @@ use App\Controllers\UsersController;
 $app->get('/', HomeController::class . ':index')->setName("home");
 $app->post('/', HomeController::class . ':post');
 $app->get('/login', AuthController::class . ':showLogin');
+$app->get('/404', ErrorsController::class . ':error404')->setName("error404");
 
 
 

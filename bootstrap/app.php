@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 session_start();
 
-use Respect\Validation\Validator as v;
 use Illuminate\Pagination\Paginator;
 
 use Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware;
@@ -82,14 +81,6 @@ require_once __DIR__ . '/container.php';
 // =========================================================================
 
 require_once __DIR__ . '/database.php';
-
-
-
-
-// #VALIDATION
-// =========================================================================
-
-v::with('App\\Validation\\Rules\\');
 
 
 

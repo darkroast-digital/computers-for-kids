@@ -120,18 +120,17 @@ $(document).keyup(function(e) {
 });
 
 
-if ($('.off-canvas')) {
+if ($('.off-canvas') || $('.off-canvas-admin')) {
     $(document).keyup(function(e) {
         if (e.keyCode === 27) {
             $('.off-canvas').removeClass('is--open');
         }
     });
-}
 
-if ($('.off-canvas-admin')) {
-    $(document).keyup(function(e) {
-        if (e.keyCode === 27) {
-            $('off-canvas-admin').removeClass('is--open');
+    $('a').click(function(){
+        if ($(this).not('.modal__trigger')) {
+            $('.off-canvas').removeClass('is--open');
+            $('.overlay').removeClass('is--active');
         }
     });
 }

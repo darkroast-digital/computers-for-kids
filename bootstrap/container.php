@@ -67,14 +67,27 @@ $twig = $container->view->getEnvironment();
 
 
 
+
+// #ERRORS
+// =========================================================================
+
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
+        return $container['view']->render($response->withStatus(404), 'errors/404.twig');
+    };
+};
+
+
+
+
 // #VALIDATION
 // =========================================================================
 
-$container['validator'] = function ($container) {
-    return new App\Validation\Validator;
-};
+// $container['validator'] = function ($container) {
+//     return new App\Validation\Validator;
+// };
 
-$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
+// $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
 
 

@@ -1,4 +1,20 @@
-RewriteEngine On
+
+RewriteEngine on
+# Use PHP5 as default
+# Changed PHP handler from application/x-httpd-php5 to application/x-httpd-phpbeta on Thu Dec 17 15:41:44 MST 2015.
+AddHandler application/x-httpd-phpbeta .php
+RewriteCond %{HTTP_HOST} ^cfkcanada.ca$ [OR]
+RewriteCond %{HTTP_HOST} ^www.cfkcanada.ca$
+RewriteRule ^/?$ "http\:\/\/www\.cfkcanada\.org" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^cfkcanada.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www.cfkcanada.org$
+RewriteRule ^facebook$ "http\:\/\/www\.facebook\.com\/home\.php\?\#\!\/pages\/CAW\-Local\-200\-Computers\-for\-Kids\/191781314116\?ref\=ts" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^cfkcanada.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www.cfkcanada.org$
+RewriteRule ^cause$ "http\:\/\/apps\.facebook\.com\/causes\/413778\?m\=0726e525" [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]

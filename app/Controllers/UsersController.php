@@ -57,7 +57,7 @@ class UsersController extends Controller
         ]);
 
         $files = $_FILES;
-        $image = $files['avatar'];
+        $image = $files['featured'];
 
         if (!file_exists(__DIR__ . '/../../assets/uploads/avatars/' . $user->id)) {
             mkdir(__DIR__ . '/../../assets/uploads/avatars/' . $user->id);
@@ -119,7 +119,10 @@ class UsersController extends Controller
         }
 
         $params = $request->getParams();
-        $password = $params['password'];
+
+        if (isset($params['password'])) {
+            $password = $params['password'];
+        }
 
         $role = 'user';
 
@@ -133,10 +136,16 @@ class UsersController extends Controller
         $id = $user->id;
 
         $user->name = $params['name'];
-        $user->password = password_hash($params['password'], PASSWORD_DEFAULT);
+        if (isset($params['password'])) {
+            $user->password = password_hash($params['password'], PASSWORD_DEFAULT);
+        }
         $user->position = $params['position'];
-        $user->email = $params['email'];
-        $user->phone = $params['phone'];
+        if (isset($params['email'])) {
+            $user->email = $params['email'];
+        }
+        if (isset($params['phone'])) {
+            $user->phone = $params['phone'];
+        }
         $user->role = $role;
 
         $user->save();
