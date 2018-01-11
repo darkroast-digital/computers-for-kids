@@ -47,3 +47,5 @@ window.SimpleMDE = require('simplemde');
 // const app = new Vue({
 //     el: '#app'
 // });
+
+window.GMaps = require('gmaps');

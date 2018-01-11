@@ -21,6 +21,7 @@
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "concurrently": "^3.4.0",
+    "gmaps": "^0.4.24",
     "simplemde": "^1.11.2"
   }
 }

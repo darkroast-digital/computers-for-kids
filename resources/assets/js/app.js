@@ -235,3 +235,20 @@ $('.image-upload input').change(function() {
     readURL(this);
     $('.image-preview').show();
 })
+
+
+
+
+// #GMAPS
+// =========================================================================
+
+var map = new GMaps({
+    el:'#map',
+    lat:42.283565,
+    lng: -83.087051
+});
+
+map.addMarker({
+    lat:42.283565,
+    lng: -83.087051
+});
